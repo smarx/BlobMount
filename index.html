@@ -27,7 +27,8 @@
 							</div>
 							<h2>DESCRIPTION</h2>
 
-<p><strong>WindowsAzureBlobFS</strong> is a <a href="http://dokan-dev.net/en">Dokan</a> file system provider for Windows Azure blob storage accounts.</p>
+<p><strong>WindowsAzureBlobFS</strong> is a <a href="http://dokan-dev.net/en">Dokan</a> file system provider for Windows Azure blob storage accounts.
+Full source code is at <a href="http://github.com/smarx/BlobMount">http://github.com/smarx/BlobMount</a>.</p>
 
 						</td>
 						<td class="code">
@@ -873,8 +874,8 @@ operation so that we can do read-ahead (significant perf gain for normal operati
 								<a class="pilcrow" href="#section_36">&#182;</a>
 							</div>
 							<p>TODO: This is a really inefficient way to do this.
-The right thing to do is to start writing new blocks and then commit <old blocks> + <new blocks>
-This is okay for small files and "works."</p>
+The right thing to do is to start writing new blocks and then commit <em>old blocks</em> + <em>new blocks</em>.
+This method is okay for small files and "works."</p>
 
 						</td>
 						<td class="code">
