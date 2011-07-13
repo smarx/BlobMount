@@ -1,6 +1,7 @@
 ﻿// DESCRIPTION
 // -----------
 // **WindowsAzureBlobFS** is a [Dokan](http://dokan-dev.net/en) file system provider for Windows Azure blob storage accounts.
+// Full source code is at [http://github.com/smarx/BlobMount](http://github.com/smarx/BlobMount).
 
 // USAGE
 // -----
@@ -459,8 +460,8 @@ namespace BlobMount
                     if (offset == blob.Properties.Length)
                     {
                         // TODO: This is a really inefficient way to do this.
-                        // The right thing to do is to start writing new blocks and then commit <old blocks> + <new blocks>
-                        // This is okay for small files and "works."
+                        // The right thing to do is to start writing new blocks and then commit *old blocks* + *new blocks*.
+                        // This method is okay for small files and "works."
                         var previousBytes = blob.DownloadByteArray();
                         writeBlobs[filename].Write(previousBytes, 0, previousBytes.Length);
                     }
